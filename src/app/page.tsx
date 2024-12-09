@@ -44,7 +44,7 @@ export default function CVWebsite() {
               </div>
             </div>
             <div className="mt-4 md:mt-0">
-              <div className="relative bottom-20">
+              {/* <div className="relative bottom-20">
                 <select
                   value={language}
                   onChange={toggleLanguage}
@@ -54,21 +54,23 @@ export default function CVWebsite() {
                   <option value="en">English</option>
                 </select>
                 <Globe className="absolute right-3 top-1/2 transform -translate-y-1/2 text-green-600 pointer-events-none" />
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="mt-6 flex flex-wrap gap-4 justify-center md:justify-start">
             <div className="flex items-center">
               <Mail className="w-5 h-5 mr-2" />
-              <span>example@email.com</span>
+              <span className="font-bold text-[18px]">mkae.dev@gmail.com</span>
             </div>
             <div className="flex items-center">
               <Phone className="w-5 h-5 mr-2" />
-              <span>+976 99484778</span>
+              <span className="font-bold text-[18px]">+976 99484778</span>
             </div>
             <div className="flex items-center">
               <MapPin className="w-5 h-5 mr-2" />
-              <span>Улаанбаатар, Монгол Улс</span>
+              <span className="font-bold text-[18px]">
+                Улаанбаатар, Монгол Улс
+              </span>
             </div>
           </div>
         </header>
@@ -160,15 +162,34 @@ export default function CVWebsite() {
               <Code className="w-6 h-6 mr-2 text-green-500" />
               Ур чадвар
             </h2>
-            <div className="ml-8">
-              <h3 className="text-xl font-semibold">Программ хангамж:</h3>
-              <p>HTML, CSS, JavaScript, React, Node.js</p>
-
-              <h3 className="text-xl font-semibold mt-4">
+            <div className="ml-8 flex flex-col gap-2">
+              <h3 className="text-xl font-semibold">
+                Програмчлалын ур чадвар:
+              </h3>
+              <div className="flex">
+                <p className="font-bold">Програмчлалын хэлүүд:</p> HTML, CSS,
+                JavaScript
+              </div>
+              <div className="flex">
+                <p className="font-bold">Фронт-энд хөгжүүлэлт:</p> React.js,
+                Tailwind CSS, ShadCN, MUI
+              </div>
+              <div className="flex">
+                <p className="font-bold">Бэк-энд хөгжүүлэлт:</p> Node.js,
+                Express.js, MongoDB
+              </div>
+              <div className="flex">
+                <p className="font-bold">Үйлчилгээ ба интеграци: :</p> Clerk,
+                Nodemailer
+              </div>
+              <div className="flex">
+                <p className="font-bold">Үүлэн үйлчилгээ ба байршуулалт:</p>{" "}
+                Cloudflare, Cloudinary, Vercel, Render
+              </div>
+              <h3 className="text-xl font-semibold mt-2">
                 Бизнесийн ур чадвар:
               </h3>
               <p>Төслийн удирдлага, харилцааны чадвар, логистик</p>
-
               <h3 className="text-xl font-semibold mt-4 flex items-center">
                 <Languages className="w-5 h-5 mr-2 text-green-500" />
                 Хэлний мэдлэг:
@@ -177,12 +198,29 @@ export default function CVWebsite() {
                 Монгол хэл (Төрөлх), Англи хэл (Дундаас дээш түвшин), Хятад хэл
                 (Суурь)
               </p>
-
               <h3 className="text-xl font-semibold mt-4 flex items-center">
                 <Users className="w-5 h-5 mr-2 text-green-500" />
                 Багаар ажиллах чадвар:
               </h3>
               <p>Үр дүнтэй харилцаа, асуудал шийдвэрлэх ур чадвар сайтай.</p>
+              <h3 className="text-xl font-semibold mt-4 flex items-center">
+                <Code className="w-6 h-6 mr-2 text-green-500" />
+                Хувийн ур чадвар
+              </h3>
+              <ul className="list-disc ml-14">
+                <li>
+                  Асуудал шийдвэрлэх чадвар. Олон талт асуудлыг дүн шинжилгээ
+                  хийж, бүтээлч шийдлүүд гаргах чадвартай.
+                </li>
+                <li>
+                  Шинийг суралцах, дасан зохицох чадвар. Шинэ технологи болон
+                  аргачлалыг богино хугацаанд бие даан суралцдаг.
+                </li>
+                <li>
+                  Хариуцлага, цагийн менежмент. Ажлын зорилгыг цаг тухайд нь
+                  биелүүлэхэд анхаарч ажилладаг.
+                </li>
+              </ul>
             </div>
           </section>
 
