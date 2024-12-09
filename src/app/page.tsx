@@ -1,101 +1,219 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Briefcase,
+  GraduationCap,
+  Code,
+  Languages,
+  Users,
+  Info,
+  Globe,
+} from "lucide-react";
 
-export default function Home() {
+export default function CVWebsite() {
+  const [language, setLanguage] = useState<"mn" | "en">("mn");
+
+  const toggleLanguage = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setLanguage(event.target.value as "mn" | "en");
+  };
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto bg-white shadow-xl rounded-lg overflow-hidden">
+        <header className="bg-green-600 text-white p-8">
+          <div className="flex flex-col items-center  md:flex-row md:justify-between">
+            <div className="text-center  md:text-left flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-6">
+              <div className="relative w-48 h-48 rounded-full overflow-hidden border-4 border-white shadow-lg">
+                <Image
+                  src="/mkae.jpg"
+                  alt="Батжаргалын Тэмүүжин"
+                  layout="fill"
+                  objectFit="cover"
+                />
+              </div>
+              <div className="relative top-14 flex justify-center  flex-col">
+                <h1 className="text-4xl font-bold mb-2">
+                  Батжаргалын Тэмүүжин
+                </h1>
+                <p className="text-xl">Software Engineer</p>
+              </div>
+            </div>
+            <div className="mt-4 md:mt-0">
+              <div className="relative bottom-20">
+                <select
+                  value={language}
+                  onChange={toggleLanguage}
+                  className="appearance-none  bg-white text-black py-2 pl-3 pr-10 rounded-md font-medium focus:outline-none focus:ring-2 focus:ring-blue-300"
+                >
+                  <option value="mn">Монгол</option>
+                  <option value="en">English</option>
+                </select>
+                <Globe className="absolute right-3 top-1/2 transform -translate-y-1/2 text-green-600 pointer-events-none" />
+              </div>
+            </div>
+          </div>
+          <div className="mt-6 flex flex-wrap gap-4 justify-center md:justify-start">
+            <div className="flex items-center">
+              <Mail className="w-5 h-5 mr-2" />
+              <span>example@email.com</span>
+            </div>
+            <div className="flex items-center">
+              <Phone className="w-5 h-5 mr-2" />
+              <span>+976 99484778</span>
+            </div>
+            <div className="flex items-center">
+              <MapPin className="w-5 h-5 mr-2" />
+              <span>Улаанбаатар, Монгол Улс</span>
+            </div>
+          </div>
+        </header>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <nav className="bg-white p-4   sticky top-0 z-10">
+          <ul className="flex flex-wrap justify-between max-w-2xl mx-auto">
+            {[
+              "Боловсрол",
+              "Ажлын туршлага",
+              "Ур чадвар",
+              "Нэмэлт мэдээлэл",
+            ].map((section) => (
+              <li key={section}>
+                <a
+                  href={`#${section}`}
+                  className="text-black hover:text-blue-800 font-medium px-4 py-2 rounded-md transition-colors duration-200 hover:bg-blue-100 flex items-center"
+                >
+                  {section === "Боловсрол" && (
+                    <GraduationCap className="w-5 h-5 mr-1 text-green-500" />
+                  )}
+                  {section === "Ажлын туршлага" && (
+                    <Briefcase className="w-5 h-5 mr-1 text-green-500" />
+                  )}
+                  {section === "Ур чадвар" && (
+                    <Code className="w-5 h-5 mr-1 text-green-500" />
+                  )}
+                  {section === "Нэмэлт мэдээлэл" && (
+                    <Info className="w-5 h-5 mr-1 text-green-500" />
+                  )}
+                  {section.charAt(0).toUpperCase() + section.slice(1)}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <main className="p-6">
+          <section id="Боловсрол" className="mb-8">
+            <h2 className="text-2xl font-bold mb-4 flex items-center">
+              <GraduationCap className="w-6 h-6 mr-2 text-green-500" />
+              Боловсрол
+            </h2>
+            <div className="ml-8">
+              <h3 className="text-xl font-semibold">
+                Бизнесийн удирдлага, бакалавр
+              </h3>
+              <p>Сургууль: Kainan University</p>
+              <p>Байршил: Тайвань</p>
+              <p>Хугацаа: 2018 – 2023 он 9 сар</p>
+            </div>
+            <div className="ml-8 mt-4">
+              <h3 className="text-xl font-semibold">
+                Software Engineer сертификат
+              </h3>
+              <p>Байгууллага: Pinecone Academy</p>
+              <p>Байршил: Монгол Улс</p>
+              <p>Хугацаа: 2023 - 2023 он 2 сар</p>
+            </div>
+          </section>
+
+          <section id="Ажлын туршлага" className="mb-8">
+            <h2 className="text-2xl font-bold mb-4 flex items-center">
+              <Briefcase className="w-6 h-6 mr-2 text-green-500" />
+              Ажлын туршлага
+            </h2>
+            <div className="ml-8">
+              <h3 className="text-xl font-semibold">FedEx, Тайвань</h3>
+              <p>Ажлын албан тушаал: Цагийн ажилтан</p>
+              <p>Хугацаа: 2020 – 2023</p>
+              <ul className="list-disc ml-6 mt-2">
+                <li>
+                  Логистик, хэрэглэгчийн үйлчилгээний чиглэлээр туршлага
+                  хуримтлуулсан.
+                </li>
+                <li>
+                  Ажлын урсгалын оновчлол, цагийн менежмент, багийн харилцаа
+                  холбоог сайжруулсан.
+                </li>
+                <li>
+                  Ачаа тээвэр, хүргэлтийн процессыг хянах, зохицуулах үүрэгтэй
+                  ажилласан.
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <section id="Ур чадвар" className="mb-8">
+            <h2 className="text-2xl font-bold mb-4 flex items-center">
+              <Code className="w-6 h-6 mr-2 text-green-500" />
+              Ур чадвар
+            </h2>
+            <div className="ml-8">
+              <h3 className="text-xl font-semibold">Программ хангамж:</h3>
+              <p>HTML, CSS, JavaScript, React, Node.js</p>
+
+              <h3 className="text-xl font-semibold mt-4">
+                Бизнесийн ур чадвар:
+              </h3>
+              <p>Төслийн удирдлага, харилцааны чадвар, логистик</p>
+
+              <h3 className="text-xl font-semibold mt-4 flex items-center">
+                <Languages className="w-5 h-5 mr-2 text-green-500" />
+                Хэлний мэдлэг:
+              </h3>
+              <p>
+                Монгол хэл (Төрөлх), Англи хэл (Дундаас дээш түвшин), Хятад хэл
+                (Суурь)
+              </p>
+
+              <h3 className="text-xl font-semibold mt-4 flex items-center">
+                <Users className="w-5 h-5 mr-2 text-green-500" />
+                Багаар ажиллах чадвар:
+              </h3>
+              <p>Үр дүнтэй харилцаа, асуудал шийдвэрлэх ур чадвар сайтай.</p>
+            </div>
+          </section>
+
+          <section id="Нэмэлт мэдээлэл" className="mb-8">
+            <h2 className="text-2xl font-bold mb-4 flex items-center">
+              <Info className="w-6 h-6 mr-2 text-green-500" />
+              Нэмэлт мэдээлэл
+            </h2>
+            <ul className="list-disc ml-14">
+              <li>
+                Тайваньд амьдарч байх хугацаандаа олон улсын орчинд ажиллах
+                туршлага хуримтлуулсан.
+              </li>
+              <li>
+                Бие дааж суралцах болон шинэ технологийг хурдан суралцах
+                чадвартай.
+              </li>
+              <li>
+                Программ хангамжийн инженерчлэл болон бизнесийн удирдлагын
+                мэдлэгээ хослуулан, оновчтой шийдлүүдийг санал болгох чадвартай.
+              </li>
+            </ul>
+          </section>
+        </main>
+
+        <footer className="bg-gray-200 p-6 text-center">
+          <p>
+            &copy; 2024 Батжаргалын Тэмүүжин. Бүх эрх хуулиар хамгаалагдсан.
+          </p>
+        </footer>
+      </div>
     </div>
   );
 }
